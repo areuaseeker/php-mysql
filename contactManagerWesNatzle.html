@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+
+<!--Wesley Natzle-->
+<html>
+    <!--/*
+    Contact Manager
+    1. Create a simple HTML form for creating a contact using the above layout as 
+    an example.  Add textboxes for First Name, Last Name,
+     Email, Cell#, HomePage and 
+    Birthdate.  Create an add contact button below the form.
+
+    2. Add the appropriate form validation for these fields using JavaScript.*/
+    -->
+<head>
+<link rel="stylesheet" type="text/css" href="contactManager.css">
+<script src="contactManager.js"></script>
+</head>
+<body>
+
+
+
+<h2>Contact Manager</h2>
+
+<form id="inputForm" action="contactManager.php" method="post">
+    <label>First name: </label><input type="text" id="firstName"><br>
+    <label>Last name:</label><input type="text" id="lastName"><br>
+    <label>Email:</label><input type="text" id="email"><br>
+    <label>Cell No:</label><input type="text" id="cell"><br>
+    <label>Homepage:</label><input type="text" id="homepage"><br>
+    <label>Birthdate (yyyy-mm-dd):</label><input type="text" id="birthdate"><br>
+  <br>
+	<button onclick="return addContact()">Add Contact</button>
+</form> 
+
+</body>
+</html>
