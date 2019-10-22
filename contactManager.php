@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $firstNameErr = "Only letters and white space allowed";
     }
   }
- 
+
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["lastName"])) {
       $nameErr = "Last name is required";
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (!preg_match("/^[a-zA-Z ]*$/",$lastName)) {
         $lastNameErr = "Only letters and white space allowed";
       }
-    } 
+    }
 
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $emailErr = "Invalid email format";
     }
   }
-    
+
   if (empty($_POST["homepage"])) {
     $homepage = "";
   } else {
@@ -70,7 +70,7 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-/* 
+/*
 *************
 comment out all the mysqli code for now leaving the pdo code
 ************
@@ -159,12 +159,13 @@ catch(PDOException $e)
     echo $sql . "<br>" . $e->getMessage();
     }
  // sql to create table
+ try {
  $sql = "CREATE TABLE Contacts (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     fullname VARCHAR(30) NOT NULL,
     email VARCHAR(50),
     cell_no VARCHAR(30) NOT NULL,
-    birthdate DATE, 
+    birthdate DATE,
     homepage VARCHAR(50),
     )";
 
@@ -193,7 +194,7 @@ if ($conn->query($stmt) === TRUE) {
     echo "Error: " . $stmt . "<br>" . $conn->error;
 }
 
-echo "<h1>Contacts</h1>"
+echo "<h1>Contacts</h1>";
 echo "<table style='border: solid 1px black;'>";
 echo "<tr><th>Name</th><th>Email</th><th>Cell No.</th><th>Birthdate</th><th>Homepage</th><th>Delete</th></tr>";
 
